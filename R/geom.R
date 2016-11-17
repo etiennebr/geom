@@ -81,12 +81,12 @@ print.geom <- function(x, ...) {
 }
 
 plot.geom <- function(x) {
-  plot(coords(x))
+  plot(coords(x), asp=1)
 }
 
 # TODO: set generic using coordinates, will be more uniform
 #' @importFrom sp coordinates
 #' @importFrom tibble as_tibble
 coords <- function(x) {
-  as_tibble(coordinates(wkt(g)))
+  as_tibble(coordinates(wkt(x)))
 }
