@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.scratch
+inst/doc
+*.Rds
+vignettes/*.R
