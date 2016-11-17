@@ -47,16 +47,23 @@ test_that("$ is coherent", {
   #expect_equal(g$y, c(5:7))
 })
 
-# c ---------------------------------------------
-
+# c ----------------------------------------------------------------------------
 test_that("c is coherent", {
   expect_equal(c(geom(1:3, 5:7), geom(4:5, 8:9)),
                geom(1:5, 5:9))
 })
 
-# dim
+# dim --------------------------------------------------------------------------
 test_that("dim and length", {
   g <- geom(2:4, 5:7)
   expect_equal(length(g), 3)
   expect_null(dim(g))
 })
+
+# wkt --------------------------------------------------------------------------
+test_that("can create geom with wkt", {
+  expect_equal(geom(1, 6), geom("POINT(1 6)"))
+  expect_equal(geom(1:2, 6:7), geom("MULTIPOINT((1 6), (2 7))"))
+})
+
+

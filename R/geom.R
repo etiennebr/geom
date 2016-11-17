@@ -1,12 +1,22 @@
 #' Create a geom object
-geom <- function(x, y, z=NULL) {
+geom <- function(x, y=NULL, z=NULL) {
   if(!is.null(z)) {
     stop("geom does not support 3D yet")
+  }
+  if(is.character(x)) {
+    return(geom.wkt(x))
   }
   stopifnot(is.numeric(x))
   stopifnot(is.numeric(y))
   stopifnot(length(x) == length(y))
   structure(wkb(x, y), class = "geom")
+}
+
+#' @importFrom wkb writeWKB
+#' @importFrom sp SpatialPoints
+#' @importFrom rgeos readWKT
+geom.wkt <- function(x) {
+  structure(writeWKB(readWKT(x)), class = "geom")
 }
 
 #' @importFrom wkb writeWKB
