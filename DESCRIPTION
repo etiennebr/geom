@@ -2,18 +2,22 @@ Package: geom
 Type: Package
 Version: 0.1.0
 Title: Spatial data for tibble
-Description: Geom is an experiment to store spatial data in rows (rather than in a separate list like in sp). Most databases store geometries in a specific column, allowing multiple geometries per observation. `geom` is an attempt at replicating this structure. We'll see how far it can go. 
+Description: Geom is an experiment to store spatial data in rows (rather than
+    in a separate list like in sp). Most databases store geometries in a specific
+    column, allowing multiple geometries per observation. `geom` is an attempt at
+    replicating this structure. We'll see how far it can go.
 Authors@R: c(
     person("Etienne", "Racine", , "etiennebr@gmail.com", c("aut", "cre"))
     )
 URL: https://github.com/etiennebr/geom
 BugReports: https://github.com/etiennebr/geom/issues
 Imports:
-  sp,
-  wkb,
-  tibble
+    sp,
+    wkb,
+    tibble
 Suggests:
-  testthat
+    testthat
 License: MIT
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 5.0.1

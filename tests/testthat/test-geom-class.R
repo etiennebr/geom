@@ -39,6 +39,14 @@ test_that("[<- is coherent", {
   expect_error(g[1:2] <- geom(9, 9), "length(i) == length(value) is not TRUE", fixed=TRUE)
 })
 
+test_that("$ is coherent", {
+  g <- geom(2:4, 5:7)
+  expect_error(g$`1`)
+  expect_error(g$k)
+  #expect_equal(g$x, c(2:4))
+  #expect_equal(g$y, c(5:7))
+})
+
 # c ---------------------------------------------
 
 test_that("c is coherent", {
@@ -50,5 +58,5 @@ test_that("c is coherent", {
 test_that("dim and length", {
   g <- geom(2:4, 5:7)
   expect_equal(length(g), 3)
-  expect_equal(dim(g), 3)
+  expect_null(dim(g))
 })

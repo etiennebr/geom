@@ -7,4 +7,5 @@ test_that("can add geom column", {
   m <- as_tibble(meuse)
 
   expect_silent(m %>% mutate(geom = geom(x, y)))
+  expect_error(m %>% mutate(geom = list(x, y)))
 })
